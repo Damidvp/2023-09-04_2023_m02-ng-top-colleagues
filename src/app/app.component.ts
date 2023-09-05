@@ -11,7 +11,7 @@ export class AppComponent {
   //Collègue fictif
   colleagueInstance:Colleague = {
     pseudo: "arno_camoa",
-    score: 1000,
+    score: 500,
     photo: "unephoto"
   };
 }
