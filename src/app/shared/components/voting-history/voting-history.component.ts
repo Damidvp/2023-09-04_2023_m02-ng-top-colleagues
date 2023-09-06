@@ -14,7 +14,12 @@ export class VotingHistoryComponent {
   listeVotes:Array<Vote> = [];
 
   constructor(private voteService: VoteService){
-    this.listeVotes = voteService.listOfVotes();
+    //voteService.listVotes();
+    this.listeVotes = voteService.getVotes();
+  }
+
+  addToList(element:Vote){
+    this.listeVotes.push(element);
   }
 
   deleteFromList(element:Vote){
@@ -22,6 +27,11 @@ export class VotingHistoryComponent {
     if(index >= 0){
       this.listeVotes.splice(index, 1);
     }
+  }
+
+  getScoreActuel(element:Vote):number{
+    const scoreActuel:number = element.colleague.score;
+    return scoreActuel;
   }
 
   isALike(val:LikeHate){

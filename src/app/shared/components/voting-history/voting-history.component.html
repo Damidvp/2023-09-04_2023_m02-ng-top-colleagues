@@ -5,9 +5,9 @@
       <img src="{{vote.colleague.photo}}" alt="une_photo">
     </div>
     <div class ="vote-history-infos">
-      <h2>{{vote.colleague.pseudo}}</h2>
-      <p>{{vote.colleague.pseudo}} est <span *ngIf="isALike(vote.vote)">aimé</span><span *ngIf="!isALike(vote.vote)">detesté</span>,
-        il a désormais un score de {{vote.colleague.score}} <span *ngIf="isALike(vote.vote)">:)</span><span *ngIf="!isALike(vote.vote)">:(</span></p>
+      <h2>{{vote.colleague.pseudo | uppercase}}</h2>
+      <p >{{vote.colleague.pseudo | uppercase}} est <span *ngIf="isALike(vote.vote)">aimé</span><span *ngIf="!isALike(vote.vote)">detesté</span>,
+        il a désormais un score de {{getScoreActuel(vote)}} <span *ngIf="isALike(vote.vote)">:)</span><span *ngIf="!isALike(vote.vote)">:(</span></p>
       <button (click)="deleteFromList(vote)">Supprimer</button>
     </div>
   </div>

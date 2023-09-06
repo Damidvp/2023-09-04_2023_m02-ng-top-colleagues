@@ -9,18 +9,28 @@
 
     transition: background-color 0.2s, color 0.2s;
   }
-  .button-like:hover{
+  button:disabled{
+    background-color: #575353;
+    color:#e2e2e2;
+  }
+  .button-like:hover:enabled{
     background-color: white;
     color: rgb(61, 192, 111);
   }
-  .button-hate:hover{
+  .button-hate:hover:enabled{
     background-color: white;
     color: rgb(206, 40, 51);
   }
   .button-like{
     background-color: rgb(61, 192, 111);
   }
+  .button-like:active:enabled{
+    background-color: #b4ffcd;
+  }
   .button-hate{
     background-color: rgb(206, 40, 51);
+  }
+  .button-hate:active:enabled{
+    background-color: #fdd3cd;
   }
 }

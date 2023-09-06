@@ -4,5 +4,5 @@
   </div>
   <div class="aff-collegue-pseudo">{{collegue?.pseudo | uppercase}}</div>
   <div>{{collegue?.score | score}}</div>
-  <tc-like-hate [overScore]="overScore()" [underScore]="underScore()" (newvalue)="changeScore($event)"></tc-like-hate>
+  <tc-like-hate [overScore]="overScore()" [underScore]="underScore()" (newvalue)="changeScore($event)" (newvalue)="addVoteToCollegue($event)"></tc-like-hate>
 </div>

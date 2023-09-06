@@ -1,5 +1,7 @@
+import { VoteService } from './../../../providers/vote.service';
+import { Vote } from './../../../models/vote';
 import { Colleague } from './../../../models/colleague';
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { LikeHate } from './../../../models/like-hate';
 import { ScorePipe } from '../../pipes/score.pipe';
 
@@ -10,6 +12,10 @@ import { ScorePipe } from '../../pipes/score.pipe';
 })
 export class ColleagueComponent {
   @Input() collegue?:Colleague;
+
+  @Output() collegueVote:EventEmitter<Vote> = new EventEmitter<Vote>();
+
+  constructor(private voteService: VoteService){}
 
   changeScore(val:LikeHate){
     if(this.collegue){
@@ -37,5 +43,15 @@ export class ColleagueComponent {
       }
     }
     return false;
+  }
+
+  addVoteToCollegue(vote:LikeHate){
+    if(this.collegue){
+      const newVote = {
+        colleague: this.collegue,
+        vote: vote
+      }
+      this.voteService.addVote(newVote);
+    }
   }
 }
