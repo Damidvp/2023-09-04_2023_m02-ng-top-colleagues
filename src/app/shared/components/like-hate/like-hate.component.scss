@@ -2,4 +2,25 @@
   padding: 1.5em;
   display:flex;
   gap: 2em;
+  button{
+    border-radius:0.5em;
+    border-style: none;
+    padding:0.3em 1.5em;
+
+    transition: background-color 0.2s, color 0.2s;
+  }
+  .button-like:hover{
+    background-color: white;
+    color: rgb(61, 192, 111);
+  }
+  .button-hate:hover{
+    background-color: white;
+    color: rgb(206, 40, 51);
+  }
+  .button-like{
+    background-color: rgb(61, 192, 111);
+  }
+  .button-hate{
+    background-color: rgb(206, 40, 51);
+  }
 }

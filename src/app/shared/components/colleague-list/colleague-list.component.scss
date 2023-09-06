@@ -1,5 +1,10 @@
 #view-colleagues{
   padding: 1em;
+  button{
+    border-style:none;
+    border-radius: 5px;
+    border: 2px black solid;
+  }
   #list-of-colleagues{
     display: flex;
     flex-wrap: wrap;
