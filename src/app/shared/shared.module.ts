@@ -1,3 +1,4 @@
+import { VoteService } from './../providers/vote.service';
 import { ColleagueService } from './../providers/colleague.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,7 +26,8 @@ import { VotingHistoryComponent } from '../shared/components/voting-history/voti
     VotingHistoryComponent
   ],
   providers: [
-    ColleagueService
+    ColleagueService,
+    VoteService
   ]
 })
 export class SharedModule { }
