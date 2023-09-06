@@ -1,6 +1,6 @@
 <div id="aff-collegue">
   <div>{{collegue?.photo}}</div>
-  <div>{{collegue?.pseudo}}</div>
+  <div>{{collegue?.pseudo | uppercase}}</div>
   <div>{{collegue?.score}}</div>
   <tc-like-hate [overScore]="overScore()" [underScore]="underScore()" (newvalue)="changeScore($event)"></tc-like-hate>
 </div>
