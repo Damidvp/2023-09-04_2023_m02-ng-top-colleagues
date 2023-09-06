@@ -23,4 +23,12 @@ export class VotingHistoryComponent {
       this.listeVotes.splice(index, 1);
     }
   }
+
+  isALike(val:LikeHate){
+    if(val === LikeHate.LIKE){
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
