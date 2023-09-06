@@ -1,6 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { LikeHate } from '../../../models/like-hate';
-import { Colleague } from '../../../models/colleague';
 
 @Component({
   selector: 'tc-like-hate',

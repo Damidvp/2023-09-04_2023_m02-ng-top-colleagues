@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Colleague } from './models/colleague';
+
 
 @Component({
   selector: 'tc-root',
@@ -8,10 +8,5 @@ import { Colleague } from './models/colleague';
 })
 export class AppComponent {
   title = 'top-colleagues';
-  //Collègue fictif
-  colleagueInstance:Colleague = {
-    pseudo: "arno_camoa",
-    score: 500,
-    photo: "unephoto"
-  };
+
 }
