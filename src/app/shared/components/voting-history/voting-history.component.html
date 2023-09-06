@@ -1,4 +1,4 @@
-<div id="history">
+<div *ngIf="listeVotes.length > 0" id="history">
   <h1>Historique</h1>
   <div class="vote-history" *ngFor="let vote of listeVotes">
     <div class="vote-history-photo">

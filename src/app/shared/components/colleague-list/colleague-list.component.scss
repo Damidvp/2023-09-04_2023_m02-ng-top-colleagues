@@ -1,4 +1,8 @@
-#list-of-colleagues{
-  display: flex;
-  flex-wrap: wrap;
+#view-colleagues{
+  padding: 1em;
+  #list-of-colleagues{
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
+
