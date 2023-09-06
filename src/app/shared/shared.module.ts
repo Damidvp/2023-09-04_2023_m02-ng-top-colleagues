@@ -4,13 +4,15 @@ import { LikeHateComponent } from '../shared/components/like-hate/like-hate.comp
 import { ColleagueComponent } from '../shared/components/colleague/colleague.component';
 import { ColleagueListComponent } from '../shared/components/colleague-list/colleague-list.component';
 import { ScorePipe } from '../shared/pipes/score.pipe';
+import { VotingHistoryComponent } from '../shared/components/voting-history/voting-history.component';
 
 @NgModule({
   declarations: [
     LikeHateComponent,
     ColleagueComponent,
     ColleagueListComponent,
-    ScorePipe
+    ScorePipe,
+    VotingHistoryComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { ScorePipe } from '../shared/pipes/score.pipe';
   exports: [
     LikeHateComponent,
     ColleagueComponent,
-    ColleagueListComponent
+    ColleagueListComponent,
+    VotingHistoryComponent
   ]
 })
 export class SharedModule { }

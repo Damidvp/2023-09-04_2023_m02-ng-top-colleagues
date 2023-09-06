@@ -1,0 +1,13 @@
+<div id="history">
+  <h1>Historique</h1>
+  <div class="vote-history" *ngFor="let vote of listeVotes">
+    <div class="vote-history-photo">
+      <img src="vote.colleague.photo" alt="une_photo">
+    </div>
+    <div class ="vote-history-infos">
+      <h2>{{vote.colleague.pseudo}}</h2>
+      <p>{{vote.colleague.pseudo}} est aimé/detesté, il a désormais un score de {{vote.colleague.score}} :) / :(</p>
+      <button (click)="deleteFromList(vote)">Supprimer</button>
+    </div>
+  </div>
+</div>
