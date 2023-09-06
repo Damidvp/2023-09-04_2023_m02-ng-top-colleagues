@@ -2,7 +2,7 @@
   <h1>Historique</h1>
   <div class="vote-history" *ngFor="let vote of listeVotes">
     <div class="vote-history-photo">
-      <img src="vote.colleague.photo" alt="une_photo">
+      <img src="{{vote.colleague.photo}}" alt="une_photo">
     </div>
     <div class ="vote-history-infos">
       <h2>{{vote.colleague.pseudo}}</h2>

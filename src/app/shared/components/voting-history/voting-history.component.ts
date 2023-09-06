@@ -16,17 +16,17 @@ export class VotingHistoryComponent {
   collegue1:Colleague = {
     pseudo: "ARNO_CAMOA",
     score: -300,
-    photo: "une_photo"
+    photo: "https://assetsio.reedpopcdn.com/final-fantasy-14-is-a-storytelling-masterpiece-1640014645264.jpg?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp"
   }
   collegue2:Colleague = {
     pseudo: "CHEB_GEEK",
     score: 200,
-    photo: "une_photo"
+    photo: "https://assetsio.reedpopcdn.com/final-fantasy-14-is-a-storytelling-masterpiece-1640014645264.jpg?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp"
   }
   collegue3:Colleague = {
     pseudo: "PEPINO_RONSO",
     score: 600,
-    photo: "une_photo"
+    photo: "https://assetsio.reedpopcdn.com/final-fantasy-14-is-a-storytelling-masterpiece-1640014645264.jpg?width=1600&height=900&fit=crop&quality=100&format=png&enable=upscale&auto=webp"
   }
   vote1:Vote = {
     colleague: this.collegue1,

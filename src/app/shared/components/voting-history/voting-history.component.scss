@@ -12,7 +12,11 @@
   .vote-history{
     display:flex;
     gap: 1em;
-
+    .vote-history-photo{
+      img{
+        width:10em;
+      }
+    }
     .vote-history-infos{
       display:flex;
       flex-direction: column;
