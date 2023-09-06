@@ -1,6 +1,7 @@
 import { Colleague } from './../../../models/colleague';
 import { Component, Input } from '@angular/core';
 import { LikeHate } from './../../../models/like-hate';
+import { ScorePipe } from '../../pipes/score.pipe';
 
 @Component({
   selector: 'tc-colleague',
