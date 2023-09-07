@@ -1,0 +1,15 @@
+#counter-likes{
+  padding-top:1.5em;
+  ul{
+    display:flex;
+    list-style-type: none;
+    gap:2em;
+    margin: 0;
+    padding: 0 1em;
+    li{
+      background-color: antiquewhite;
+      padding:0.3em 1em;
+      border-radius: 5px;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+import { Subject } from 'rxjs';
 import { Colleague } from './../models/colleague';
 import { LikeHate } from './../models/like-hate';
 import { Vote } from './../models/vote';
@@ -11,6 +12,11 @@ export class VoteService {
   constructor() { }
 
   private votes: Vote[] = [];
+  private action = new Subject<Vote>();
+
+  get actionObs(){
+    return this.action.asObservable();
+  }
 
   listVotes() {
     const lh1: LikeHate = LikeHate.LIKE;
@@ -57,5 +63,6 @@ export class VoteService {
 
   addVote(vote:Vote){
     this.votes.push(vote);
+    this.action.next(vote);
   }
 }
