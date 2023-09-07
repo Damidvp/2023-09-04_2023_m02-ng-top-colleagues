@@ -1,9 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject } from 'rxjs';
-import { Colleague } from './../models/colleague';
-import { LikeHate } from './../models/like-hate';
+import { Subject, Observable } from 'rxjs';
 import { Vote } from './../models/vote';
 import { Injectable } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +20,7 @@ export class VoteService {
     return this.action.asObservable();
   }
 
+  /*
   listVotes() {
     const lh1: LikeHate = LikeHate.LIKE;
     const lh2: LikeHate = LikeHate.HATE;
@@ -59,10 +59,7 @@ export class VoteService {
     }
     this.votes = [vote1, vote2, vote3, vote4];
   }
-
-  getVotes(){
-    return this.votes;
-  }
+  */
 
   addVote(vote:Vote){
     const httpOptions = {
@@ -79,6 +76,9 @@ export class VoteService {
           //console.log("données envoyées : " + vote.colleague.pseudo + " - " + vote.vote.toString());
           this.votes.push(vote);
           this.action.next(vote);
+          if(this.votes.length > 10){
+            this.votes.shift();
+          }
         })
   }
 
@@ -94,5 +94,13 @@ export class VoteService {
         console.log(err);
       }
     })
+  }
+
+  getListOfVotes(){
+    return this.votes;
+  }
+
+  getVotes(): Observable<Vote[]>{
+    return this.http.get<Vote[]>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/votes');
   }
 }

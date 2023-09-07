@@ -1,4 +1,3 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LikeHate } from 'src/app/models/like-hate';
 import { Vote } from './../../../models/vote';
 import { VoteService } from './../../../providers/vote.service';

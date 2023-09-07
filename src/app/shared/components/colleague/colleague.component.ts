@@ -23,7 +23,7 @@ export class ColleagueComponent {
   changeScore(val:LikeHate){
     if(this.collegue){
       if(val === LikeHate.HATE){
-        this.collegue.score -= 100;
+        this.collegue.score -= 200;
       } else if (val === LikeHate.LIKE){
         this.collegue.score += 100;
       }
