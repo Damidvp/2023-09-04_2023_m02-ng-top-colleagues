@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VoteService } from './../../../providers/vote.service';
 import { Vote } from './../../../models/vote';
 import { Colleague } from './../../../models/colleague';
@@ -15,7 +16,9 @@ export class ColleagueComponent {
 
   @Output() collegueVote:EventEmitter<Vote> = new EventEmitter<Vote>();
 
-  constructor(private voteService: VoteService){}
+  constructor(private voteService: VoteService){
+
+  }
 
   changeScore(val:LikeHate){
     if(this.collegue){

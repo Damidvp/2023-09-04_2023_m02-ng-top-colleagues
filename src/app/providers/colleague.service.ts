@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Colleague } from './../models/colleague';
 import { Injectable } from '@angular/core';
 
@@ -6,10 +7,25 @@ import { Injectable } from '@angular/core';
 })
 export class ColleagueService {
 
-  constructor() { }
+  listColleagues:Colleague[] = [];
+
+  constructor(private http:HttpClient) {
+    this.http.get<Colleague[]>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/colleagues')
+      .subscribe({
+        next: (colleagues: Colleague[]) => {
+          for(const coll of colleagues){
+            this.listColleagues.push(coll);
+          }
+        },
+        error: err => {
+          console.log(err);
+        }
+      })
+  }
 
   listOfColleagues(): Colleague[] {
     //Collègues fictifs
+    /*
     const colleagueInstance1: Colleague = {
       pseudo: "arno_camoa",
       score: 500,
@@ -58,7 +74,8 @@ export class ColleagueService {
     const colleguesListe: Array<Colleague> = [colleagueInstance1, colleagueInstance2, colleagueInstance3,
       colleagueInstance4, colleagueInstance5, colleagueInstance6, colleagueInstance7,
       colleagueInstance8, colleagueInstance9];
-    return colleguesListe;
+    */
+    return this.listColleagues;
   }
 
 }

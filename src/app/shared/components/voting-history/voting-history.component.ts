@@ -15,7 +15,7 @@ export class VotingHistoryComponent {
 
   constructor(private voteService: VoteService){
     //voteService.listVotes();
-    this.listeVotes = voteService.getVotes();
+    this.listeVotes = this.voteService.getVotes();
   }
 
   addToList(element:Vote){

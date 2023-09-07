@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LikeHate } from 'src/app/models/like-hate';
 import { Vote } from './../../../models/vote';
 import { VoteService } from './../../../providers/vote.service';
@@ -10,16 +11,16 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./counter.component.scss']
 })
 export class CounterComponent implements OnDestroy {
-  counterLike:number = 0;
-  counterHate:number = 0;
-  actionSub:Subscription;
+  counterLike: number = 0;
+  counterHate: number = 0;
+  actionSub: Subscription;
 
-  constructor(private voteService:VoteService){
+  constructor(private voteService: VoteService) {
     this.actionSub = this.voteService.actionObs.subscribe(
-      (data:Vote) => {
-        if(data.vote == LikeHate.LIKE){
+      (data: Vote) => {
+        if (data.vote == LikeHate.LIKE) {
           this.counterLike++;
-        } else if(data.vote == LikeHate.HATE){
+        } else if (data.vote == LikeHate.HATE) {
           this.counterHate++;
         }
       }
@@ -27,6 +28,6 @@ export class CounterComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-      this.actionSub.unsubscribe();
+    this.actionSub.unsubscribe();
   }
 }
