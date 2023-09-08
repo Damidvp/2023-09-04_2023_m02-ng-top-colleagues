@@ -16,10 +16,6 @@ export class VotingHistoryComponent implements OnInit {
 
   constructor(private voteService: VoteService){}
 
-  addToList(element:Vote){
-    this.listeVotes.push(element);
-  }
-
   deleteFromList(element:Vote){
     const index = this.listeVotes.indexOf(element);
     if(index >= 0){
@@ -35,9 +31,10 @@ export class VotingHistoryComponent implements OnInit {
   isALike(val:LikeHate){
     if(val === LikeHate.LIKE){
       return true;
-    } else {
+    } else if(val === LikeHate.HATE) {
       return false;
     }
+    return false;
   }
 
   ngOnInit(){

@@ -13,12 +13,15 @@
     <label>Prénom - 名前</label>
     <input [(ngModel)]="model.prenom" [ngModelOptions]="{updateOn: 'blur'}" #prenom="ngModel" name="prenom" minlength="2" type="text" required>
   </div>
-  <p *ngIf="prenom.dirty && prenom.invalid">Nom invalide.</p>
+  <p *ngIf="prenom.dirty && prenom.invalid">Prénom invalide.</p>
   <div class="element-form">
     <label>Photo URL - イメージURL</label>
     <input [(ngModel)]="model.urlphoto" [ngModelOptions]="{updateOn: 'blur'}" name="urlphoto" type="text" required>
   </div>
   <div id="btn-submit">
-    <button type="submit">Ajouter</button>
+    <button type="submit" [disabled]="formColleagues.invalid">Ajouter</button>
   </div>
+  <p *ngIf="formColleagues.valid">
+    Collègue créé !
+  </p>
 </form>
