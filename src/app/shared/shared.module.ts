@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { VoteService } from './../providers/vote.service';
 import { ColleagueService } from './../providers/colleague.service';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,7 @@ import { ColleagueListComponent } from '../shared/components/colleague-list/coll
 import { ScorePipe } from '../shared/pipes/score.pipe';
 import { VotingHistoryComponent } from '../shared/components/voting-history/voting-history.component';
 import { CounterComponent } from '../shared/components/counter/counter.component';
+import { CreateColleagueFormsComponent } from './components/create-colleague-forms/create-colleague-forms.component';
 
 @NgModule({
   declarations: [
@@ -16,17 +18,20 @@ import { CounterComponent } from '../shared/components/counter/counter.component
     ColleagueListComponent,
     ScorePipe,
     VotingHistoryComponent,
-    CounterComponent
+    CounterComponent,
+    CreateColleagueFormsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     LikeHateComponent,
     ColleagueComponent,
     ColleagueListComponent,
     VotingHistoryComponent,
-    CounterComponent
+    CounterComponent,
+    CreateColleagueFormsComponent
   ],
   providers: [
     ColleagueService,

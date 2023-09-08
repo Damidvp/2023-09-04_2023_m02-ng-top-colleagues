@@ -1,3 +1,5 @@
+import { FormsModule } from '@angular/forms';
+import { CreateColleagueModule } from './pages/create-colleague/create-colleague.module';
 import { WelcomeModule } from './pages/welcome/welcome.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
     SharedModule,
     WelcomeModule,
-    HttpClientModule
+    HttpClientModule,
+    CreateColleagueModule
   ],
   providers: [],
   bootstrap: [AppComponent]

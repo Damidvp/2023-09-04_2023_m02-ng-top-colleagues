@@ -1,0 +1,24 @@
+<form (ngSubmit)="submit()" #formColleagues="ngForm" id="form-ajout">
+  <h1>Ajouter un collègue - 新同僚</h1>
+  <div class="element-form">
+    <label>Pseudo - ニックネーム</label>
+    <input [(ngModel)]="model.pseudo" [ngModelOptions]="{updateOn: 'blur'}" name="pseudo" type="text" required>
+  </div>
+  <div class="element-form">
+    <label>Nom - 名字</label>
+    <input [(ngModel)]="model.nom" [ngModelOptions]="{updateOn: 'blur'}" #nom="ngModel" name="nom" type="text" minlength="2" required>
+  </div>
+  <p *ngIf="nom.dirty && nom.invalid">Nom invalide.</p>
+  <div class="element-form">
+    <label>Prénom - 名前</label>
+    <input [(ngModel)]="model.prenom" [ngModelOptions]="{updateOn: 'blur'}" #prenom="ngModel" name="prenom" minlength="2" type="text" required>
+  </div>
+  <p *ngIf="prenom.dirty && prenom.invalid">Nom invalide.</p>
+  <div class="element-form">
+    <label>Photo URL - イメージURL</label>
+    <input [(ngModel)]="model.urlphoto" [ngModelOptions]="{updateOn: 'blur'}" name="urlphoto" type="text" required>
+  </div>
+  <div id="btn-submit">
+    <button type="submit">Ajouter</button>
+  </div>
+</form>

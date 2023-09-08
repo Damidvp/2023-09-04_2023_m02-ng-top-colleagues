@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Colleague } from './../models/colleague';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -85,6 +85,24 @@ export class ColleagueService {
 
   getCollegues(): Observable<Colleague[]>{
     return this.http.get<Colleague[]>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/colleagues');
+  }
+
+  addCollegue(colleague:Colleague){
+    console.log("données envoyées : " + colleague.pseudo + colleague.photo + colleague.score)
+    const httpOptions = {
+      headers: new HttpHeaders({ "Content-Type": "application/json" })
+    };
+    this.http.post<Colleague>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/colleagues',
+          {
+            pseudo: colleague.pseudo,
+            photo: colleague.photo,
+            score: colleague.score
+          },
+          httpOptions
+        )
+        .subscribe(newColleague => {
+          this.listColleagues.unshift(colleague);
+        })
   }
 
 }
