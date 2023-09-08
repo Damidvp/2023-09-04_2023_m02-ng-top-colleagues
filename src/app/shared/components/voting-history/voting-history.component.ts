@@ -14,9 +14,7 @@ export class VotingHistoryComponent implements OnInit {
 
   listeVotes:Array<Vote> = [];
 
-  constructor(private voteService: VoteService){
-    this.listeVotes = this.voteService.getListOfVotes();
-   }
+  constructor(private voteService: VoteService){}
 
   addToList(element:Vote){
     this.listeVotes.push(element);
@@ -51,11 +49,6 @@ export class VotingHistoryComponent implements OnInit {
   }
 
   load(){
-    this.listeVotes = [];
-    this.voteService.getVotes().subscribe((votes)=>{
-      for(const vote of votes){
-        this.listeVotes.push(vote);
-      }
-    })
+    this.listeVotes = this.voteService.getListOfVotes();
   }
 }
