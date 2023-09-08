@@ -17,9 +17,9 @@ export class CounterComponent implements OnDestroy {
   constructor(private voteService: VoteService) {
     this.actionSub = this.voteService.actionObs.subscribe(
       (data: Vote) => {
-        if (data.vote == LikeHate.LIKE) {
+        if (data.like_hate == LikeHate.LIKE) {
           this.counterLike++;
-        } else if (data.vote == LikeHate.HATE) {
+        } else if (data.like_hate == LikeHate.HATE) {
           this.counterHate++;
         }
       }

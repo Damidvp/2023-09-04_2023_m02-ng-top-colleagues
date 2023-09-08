@@ -52,7 +52,7 @@ export class ColleagueComponent {
     if(this.collegue){
       const newVote = {
         colleague: this.collegue,
-        vote: vote
+        like_hate: vote
       }
       this.voteService.addVote(newVote);
     }

@@ -1,3 +1,5 @@
+import { Colleague } from './../models/colleague';
+import { LikeHate } from 'src/app/models/like-hate';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject, Observable } from 'rxjs';
 import { Vote } from './../models/vote';
@@ -12,7 +14,27 @@ export class VoteService {
   private action = new Subject<Vote>();
 
   constructor(private http:HttpClient) {
-    this.loadVotes();
+    this.getVotes()
+    .subscribe((allVotes: Vote[]) => {
+        for(let vote of allVotes){
+          console.log(vote);
+          this.votes.push(vote);
+          /*
+          let lhString:string = vote.like_hate;
+          let lh:LikeHate = LikeHate.LIKE;
+          if(lhString == "HATE"){
+            lh = LikeHate.HATE;
+          }
+          let coll:Colleague = vote.colleague;
+          this.votes.push({
+            colleague: coll,
+            like_hate: lh
+          })
+          */
+        }
+      }
+    )
+    console.log(this.votes.length);
   }
 
   get actionObs(){
@@ -67,7 +89,7 @@ export class VoteService {
     this.http.post<Vote>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/votes',
           {
             pseudo: vote.colleague.pseudo,
-            like_hate: vote.vote.toString()
+            like_hate: vote.like_hate.toString()
           },
           httpOptions
         )
@@ -82,17 +104,13 @@ export class VoteService {
   }
 
   loadVotes(){
-    this.http.get<Vote[]>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/votes')
-    .subscribe({
-      next: (allVotes: Vote[]) => {
-        for(const vote of allVotes){
+    this.getVotes()
+    .subscribe((allVotes: Vote[]) => {
+        for(let vote of allVotes){
           this.votes.push(vote);
         }
-      },
-      error: err => {
-        console.log(err);
       }
-    })
+    )
   }
 
   getListOfVotes(){

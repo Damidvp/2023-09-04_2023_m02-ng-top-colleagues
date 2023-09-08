@@ -28,13 +28,14 @@ export class VotingHistoryComponent implements OnInit {
     return scoreActuel;
   }
 
-  isALike(val:LikeHate){
-    if(val === LikeHate.LIKE){
+  isALike(vote:Vote){
+    console.log(vote.like_hate);
+    if(vote.like_hate === LikeHate.LIKE){
       return true;
-    } else if(val === LikeHate.HATE) {
+    } else if(vote.like_hate === LikeHate.HATE) {
       return false;
     }
-    return false;
+    return true;
   }
 
   ngOnInit(){
