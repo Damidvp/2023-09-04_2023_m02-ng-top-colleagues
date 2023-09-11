@@ -23,7 +23,8 @@ export class CreateColleagueFormsComponent {
   model = new ModelFormCollegue();
 
   submit(){
-    console.log(this.model);
+    //console.log(this.model);
+    //console.log(this.checkIfNicknameExists(this.model.pseudo))
     if(this.model.pseudo && this.model.nom && this.model.prenom && this.model.urlphoto){
       console.log("données envoyées : " + this.model.pseudo + this.model.urlphoto)
       this.colleagueService.addCollegue(
@@ -37,7 +38,24 @@ export class CreateColleagueFormsComponent {
       )
     }
     this.resetModel();
+
     //TODO envoi requête à l'API si ok
+  }
+
+  checkIfNicknameExists(pseudo:string|undefined){
+    if(pseudo){
+      if(this.colleagueService.getCollegueByPseudo(pseudo)){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  urlIsValid(url:string|undefined){
+    if(url){
+      return url.includes("http://");
+    }
+    return false;
   }
 
   resetModel(){

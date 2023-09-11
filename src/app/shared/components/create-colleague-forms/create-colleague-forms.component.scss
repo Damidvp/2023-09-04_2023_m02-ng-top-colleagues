@@ -19,6 +19,15 @@
     input {
       width: 17em;
     }
+    .valide{
+      background-color: #a2ffc6;
+    }
+    .invalide{
+      background-color: #fcbfb5;
+    }
+    .blank{
+      background-color: white;
+    }
   }
 
   p{

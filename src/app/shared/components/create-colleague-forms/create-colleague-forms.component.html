@@ -2,23 +2,25 @@
   <h1>Ajouter un collègue - 新同僚</h1>
   <div class="element-form">
     <label>Pseudo - ニックネーム</label>
-    <input [(ngModel)]="model.pseudo" [ngModelOptions]="{updateOn: 'blur'}" name="pseudo" type="text" required>
+    <input [(ngModel)]="model.pseudo" [ngModelOptions]="{updateOn: 'blur'}" [ngClass]="{'valide': !checkIfNicknameExists(model.pseudo) && pseudo.dirty, 'invalide': checkIfNicknameExists(model.pseudo), 'blank': pseudo.value == '' }" #pseudo="ngModel" name="pseudo" type="text" required>
   </div>
+  <p *ngIf="pseudo.dirty && checkIfNicknameExists(model.pseudo) && pseudo.value != ''">Ce pseudo est déjà utilisé.</p>
   <div class="element-form">
     <label>Nom - 名字</label>
-    <input [(ngModel)]="model.nom" [ngModelOptions]="{updateOn: 'blur'}" #nom="ngModel" name="nom" type="text" minlength="2" required>
+    <input [(ngModel)]="model.nom" [ngModelOptions]="{updateOn: 'blur'}" [ngClass]="{'valide': nom.valid && nom.dirty, 'invalide': nom.invalid && nom.dirty, 'blank': nom.value == ''}" #nom="ngModel" name="nom" type="text" minlength="2" required>
   </div>
-  <p *ngIf="nom.dirty && nom.invalid">Nom invalide.</p>
+  <p *ngIf="nom.dirty && nom.invalid && nom.value != ''">Nom invalide.</p>
   <div class="element-form">
     <label>Prénom - 名前</label>
-    <input [(ngModel)]="model.prenom" [ngModelOptions]="{updateOn: 'blur'}" #prenom="ngModel" name="prenom" minlength="2" type="text" required>
+    <input [(ngModel)]="model.prenom" [ngModelOptions]="{updateOn: 'blur'}" [ngClass]="{'valide': prenom.valid && prenom.dirty, 'invalide': prenom.invalid && prenom.dirty, 'blank': prenom.value == ''}" #prenom="ngModel" name="prenom" minlength="2" type="text" required>
   </div>
-  <p *ngIf="prenom.dirty && prenom.invalid">Prénom invalide.</p>
+  <p *ngIf="prenom.dirty && prenom.invalid && prenom.value != ''">Prénom invalide.</p>
   <div class="element-form">
     <label>Photo URL - イメージURL</label>
-    <input [(ngModel)]="model.urlphoto" [ngModelOptions]="{updateOn: 'blur'}" name="urlphoto" type="text" required>
+    <input [(ngModel)]="model.urlphoto" [ngModelOptions]="{updateOn: 'blur'}" [ngClass]="{'valide': urlIsValid(model.urlphoto) && url.dirty, 'invalide': !urlIsValid(model.urlphoto) && url.dirty, 'blank': url.value == ''}" #url="ngModel" name="urlphoto" type="text" required>
   </div>
+  <p *ngIf="url.dirty && !urlIsValid(model.urlphoto) && url.value != ''">URL invalide.</p>
   <div id="btn-submit">
-    <button type="submit" [disabled]="formColleagues.invalid">Ajouter</button>
+    <button type="submit" [disabled]="formColleagues.invalid || !urlIsValid(model.urlphoto) || checkIfNicknameExists(model.pseudo)">Ajouter</button>
   </div>
 </form>

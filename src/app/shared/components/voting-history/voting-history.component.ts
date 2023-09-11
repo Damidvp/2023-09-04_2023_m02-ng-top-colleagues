@@ -29,7 +29,7 @@ export class VotingHistoryComponent implements OnInit {
   }
 
   isALike(vote:Vote){
-    console.log(vote.like_hate);
+    //console.log(vote.like_hate);
     if(vote.like_hate === LikeHate.LIKE){
       return true;
     } else if(vote.like_hate === LikeHate.HATE) {

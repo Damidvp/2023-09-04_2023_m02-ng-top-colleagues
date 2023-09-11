@@ -87,6 +87,16 @@ export class ColleagueService {
     return this.http.get<Colleague[]>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/colleagues');
   }
 
+  getCollegueByPseudo(pseudo:string){
+    let colleague:Colleague | undefined;
+    for(let coll of this.listColleagues){
+      if(coll.pseudo == pseudo){
+        colleague = coll;
+      }
+    }
+    return colleague;
+  }
+
   addCollegue(colleague:Colleague, last:string, first:string){
     const httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
