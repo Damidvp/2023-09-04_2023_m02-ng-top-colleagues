@@ -3,9 +3,9 @@
   <p *ngIf="formColleagues.errors && (nom.dirty || prenom.dirty) && (nom.value != '' && prenom.value != '')">{{formColleagues.errors['firstLast']}}</p>
   <div class="element-form">
     <label>Pseudo - ニックネーム</label>
-    <input [(ngModel)]="model.pseudo" [ngModelOptions]="{updateOn: 'blur'}" [ngClass]="{'valide': !checkIfNicknameExists(model.pseudo) && pseudo.dirty, 'invalide': checkIfNicknameExists(model.pseudo), 'blank': pseudo.value == '' }" #pseudo="ngModel" name="pseudo" type="text" required>
+    <input tcPseudoValidator [(ngModel)]="model.pseudo" [ngModelOptions]="{updateOn: 'blur'}" [ngClass]="{'valide': !pseudo.errors && pseudo.dirty, 'invalide': pseudo.errors && pseudo.dirty, 'blank': pseudo.value == '' }" #pseudo="ngModel" name="pseudo" type="text" required>
   </div>
-  <p *ngIf="pseudo.dirty && checkIfNicknameExists(model.pseudo) && pseudo.value != ''">Ce pseudo est déjà utilisé.</p>
+  <p *ngIf="pseudo.dirty && pseudo.errors && pseudo.value != ''">{{pseudo.errors['pseudoMessage']}}</p>
   <div class="element-form">
     <label>Nom - 名字</label>
     <input [(ngModel)]="model.nom" [ngModelOptions]="{updateOn: 'blur'}" [ngClass]="{'valide': nom.valid && nom.dirty, 'invalide': nom.invalid && nom.dirty, 'blank': nom.value == ''}" #nom="ngModel" name="nom" type="text" minlength="2" required>
@@ -22,6 +22,6 @@
   </div>
   <p *ngIf="url.dirty && !urlIsValid(model.urlphoto) && url.value != ''">URL invalide.</p>
   <div id="btn-submit">
-    <button type="submit" [disabled]="formColleagues.invalid || !urlIsValid(model.urlphoto) || checkIfNicknameExists(model.pseudo) || formColleagues.errors">Ajouter</button>
+    <button type="submit" [disabled]="formColleagues.invalid || !urlIsValid(model.urlphoto) || pseudo.errors || formColleagues.errors">Ajouter</button>
   </div>
 </form>

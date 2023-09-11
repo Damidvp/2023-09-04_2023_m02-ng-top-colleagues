@@ -12,7 +12,7 @@ export class FirstLastValidatorDirective implements Validator{
   validate(control: AbstractControl): ValidationErrors | null {
     if(control.value.nom == control.value.prenom){
       console.log("same");
-      return {firstLast: 'first name must be different from last name'};
+      return {firstLast: 'Le nom et prénom doivent être différents.'};
     }
     return null;
   }

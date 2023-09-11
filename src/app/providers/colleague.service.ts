@@ -88,13 +88,7 @@ export class ColleagueService {
   }
 
   getCollegueByPseudo(pseudo:string){
-    let colleague:Colleague | undefined;
-    for(let coll of this.listColleagues){
-      if(coll.pseudo == pseudo){
-        colleague = coll;
-      }
-    }
-    return colleague;
+    return this.http.get<Colleague | null>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/colleagues/'+pseudo);
   }
 
   addCollegue(colleague:Colleague, last:string, first:string){
