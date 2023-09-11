@@ -53,7 +53,7 @@ export class CreateColleagueFormsComponent {
 
   urlIsValid(url:string|undefined){
     if(url){
-      return url.includes("http://");
+      return url.includes("http://") || url.includes("https://");
     }
     return false;
   }

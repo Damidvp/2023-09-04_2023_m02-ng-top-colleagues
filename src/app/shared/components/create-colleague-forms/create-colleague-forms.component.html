@@ -1,5 +1,6 @@
-<form (ngSubmit)="submit()" #formColleagues="ngForm" id="form-ajout">
+<form tcFirstLastValidator (ngSubmit)="submit()" #formColleagues="ngForm" id="form-ajout">
   <h1>Ajouter un collègue - 新同僚</h1>
+  <p *ngIf="formColleagues.errors && (nom.dirty || prenom.dirty) && (nom.value != '' && prenom.value != '')">{{formColleagues.errors['firstLast']}}</p>
   <div class="element-form">
     <label>Pseudo - ニックネーム</label>
     <input [(ngModel)]="model.pseudo" [ngModelOptions]="{updateOn: 'blur'}" [ngClass]="{'valide': !checkIfNicknameExists(model.pseudo) && pseudo.dirty, 'invalide': checkIfNicknameExists(model.pseudo), 'blank': pseudo.value == '' }" #pseudo="ngModel" name="pseudo" type="text" required>
@@ -21,6 +22,6 @@
   </div>
   <p *ngIf="url.dirty && !urlIsValid(model.urlphoto) && url.value != ''">URL invalide.</p>
   <div id="btn-submit">
-    <button type="submit" [disabled]="formColleagues.invalid || !urlIsValid(model.urlphoto) || checkIfNicknameExists(model.pseudo)">Ajouter</button>
+    <button type="submit" [disabled]="formColleagues.invalid || !urlIsValid(model.urlphoto) || checkIfNicknameExists(model.pseudo) || formColleagues.errors">Ajouter</button>
   </div>
 </form>
