@@ -1,4 +1,6 @@
+import { CreateCollegueReactiveModule } from './pages/create-collegue-reactive/create-collegue-reactive.module';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CreateColleagueModule } from './pages/create-colleague/create-colleague.module';
 import { WelcomeModule } from './pages/welcome/welcome.module';
 import { NgModule } from '@angular/core';
@@ -19,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SharedModule,
     WelcomeModule,
     HttpClientModule,
-    CreateColleagueModule
+    CreateColleagueModule,
+    CreateCollegueReactiveModule
   ],
   providers: [],
   bootstrap: [AppComponent]

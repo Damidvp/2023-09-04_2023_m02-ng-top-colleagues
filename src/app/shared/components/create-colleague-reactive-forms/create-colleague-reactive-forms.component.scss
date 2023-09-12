@@ -1,0 +1,42 @@
+#form-ajout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  width: 43em;
+  padding: 2em 5em;
+
+  background-color: rgba(230, 230, 230, 0.6);
+  border-radius: 10px;
+
+  h1 {
+    padding-bottom: 0.5em;
+  }
+
+  .element-form {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 17em;
+    }
+    .valide{
+      background-color: #a2ffc6;
+    }
+    .invalide{
+      background-color: #fcbfb5;
+    }
+    .blank{
+      background-color: white;
+    }
+  }
+
+  p{
+    color: red;
+  }
+
+  #btn-submit {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1em;
+  }
+}

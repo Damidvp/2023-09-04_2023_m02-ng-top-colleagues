@@ -1,5 +1,5 @@
 <form tcFirstLastValidator (ngSubmit)="submit()" #formColleagues="ngForm" id="form-ajout">
-  <h1>Ajouter un collègue - 新同僚</h1>
+  <h1>Ajouter un collègue (native) - 新同僚</h1>
   <p *ngIf="formColleagues.errors && (nom.dirty || prenom.dirty) && (nom.value != '' && prenom.value != '')">{{formColleagues.errors['firstLast']}}</p>
   <div class="element-form">
     <label>Pseudo - ニックネーム</label>

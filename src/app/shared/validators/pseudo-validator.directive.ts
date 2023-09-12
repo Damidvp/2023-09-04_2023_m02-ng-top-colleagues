@@ -14,11 +14,12 @@ export class PseudoValidatorDirective implements AsyncValidator{
   constructor(private colleagueService: ColleagueService) { }
 
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
-
     return this.colleagueService.getCollegueByPseudo(control.value).pipe(
       map((colleague: Colleague | null) => {
-        if(colleague !== null) return {pseudoMessage: "Ce pseudo est déjà utilisé."};
-        return null;
+        if(colleague !== null) {
+          return {pseudoMessage: "Ce pseudo est déjà utilisé."};
+        }
+        return of(null);
       })
     )
   }
