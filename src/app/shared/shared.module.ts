@@ -13,6 +13,7 @@ import { CreateColleagueFormsComponent } from './components/create-colleague-for
 import { FirstLastValidatorDirective } from './validators/first-last-validator.directive';
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     CreateColleagueFormsComponent,
     FirstLastValidatorDirective,
     PseudoValidatorDirective,
-    CreateColleagueReactiveFormsComponent
+    CreateColleagueReactiveFormsComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { CreateColleagueReactiveFormsComponent } from './components/create-colle
     VotingHistoryComponent,
     CounterComponent,
     CreateColleagueFormsComponent,
-    CreateColleagueReactiveFormsComponent
+    CreateColleagueReactiveFormsComponent,
+    MenuComponent
   ],
   providers: [
     ColleagueService,
