@@ -1,3 +1,4 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { Colleague } from './../../../models/colleague';
 import { Observable, map, of } from 'rxjs';
 import { FirstLastValidatorDirective } from './../../validators/first-last-validator.directive';
@@ -23,7 +24,7 @@ export class CreateColleagueReactiveFormsComponent {
   model: ModelFormCollegue = new ModelFormCollegue();
   formColleagues: FormGroup;
 
-  constructor(private colleagueService: ColleagueService, private formBuilder: FormBuilder) {
+  constructor(private colleagueService: ColleagueService, private formBuilder: FormBuilder, private route:Router) {
     this.formColleagues = this.formBuilder.group({
       pseudo: ['', Validators.required],
       nom: ['', [Validators.required, Validators.minLength(2)]],
@@ -48,6 +49,7 @@ export class CreateColleagueReactiveFormsComponent {
           score: 0
         }
       )
+      this.route.navigate(["/welcome-page"]);
     }
     this.resetModel();
   }

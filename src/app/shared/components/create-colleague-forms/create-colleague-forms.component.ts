@@ -1,6 +1,7 @@
 import { NgForm } from '@angular/forms';
 import { ColleagueService } from './../../../providers/colleague.service';
 import { Component, ViewChild } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 class ModelFormCollegue{
   pseudo?:string;
@@ -16,7 +17,7 @@ class ModelFormCollegue{
 })
 export class CreateColleagueFormsComponent {
 
-  constructor(private colleagueService:ColleagueService){
+  constructor(private colleagueService:ColleagueService, private route:Router){
 
   }
 
@@ -36,6 +37,7 @@ export class CreateColleagueFormsComponent {
           score: 0
         }
       )
+      this.route.navigate(["/welcome-page"]);
     }
     this.resetModel();
 
