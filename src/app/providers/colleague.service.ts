@@ -91,15 +91,15 @@ export class ColleagueService {
     return this.http.get<Colleague | null>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/colleagues/'+pseudo);
   }
 
-  addCollegue(colleague:Colleague, last:string, first:string){
+  addCollegue(colleague:Colleague){
     const httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
     };
     this.http.post<Colleague>('https://app-6f6e9c23-7f63-4d86-975b-a0b1a1440f94.cleverapps.io/api/v2/colleagues',
           {
             pseudo: colleague.pseudo,
-            last: last,
-            first: first,
+            last: colleague.last,
+            first: colleague.first,
             photo: colleague.photo,
             score: colleague.score
           },

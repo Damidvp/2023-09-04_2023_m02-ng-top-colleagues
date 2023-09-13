@@ -15,6 +15,7 @@ import { FirstLastValidatorDirective } from './validators/first-last-validator.d
 import { PseudoValidatorDirective } from './validators/pseudo-validator.directive';
 import { CreateColleagueReactiveFormsComponent } from './components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ColleagueDetailsComponent } from '../shared/components/colleague-details/colleague-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MenuComponent } from './components/menu/menu.component';
     FirstLastValidatorDirective,
     PseudoValidatorDirective,
     CreateColleagueReactiveFormsComponent,
-    MenuComponent
+    MenuComponent,
+    ColleagueDetailsComponent
   ],
   imports: [
     CommonModule,

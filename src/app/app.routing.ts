@@ -1,3 +1,5 @@
+import { ColleagueDetailsComponent } from './shared/components/colleague-details/colleague-details.component';
+import { ColleagueComponent } from './shared/components/colleague/colleague.component';
 import { CreateColleagueFormsComponent } from './shared/components/create-colleague-forms/create-colleague-forms.component';
 import { NgModule } from '@angular/core';
 import { WelcomePage } from './pages/welcome/welcome.page';
@@ -9,6 +11,7 @@ export const ROUTES: Routes = [
   { path:'welcome-page', component: WelcomePage },
   { path:'create-form-template', component: CreateColleagueFormsComponent },
   { path:'create-form-reactive', component: CreateColleagueReactiveFormsComponent },
+  { path:'colleagues/:pseudo', component: ColleagueDetailsComponent},
   { path: '**', component: WelcomePage }
 ]
 

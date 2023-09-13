@@ -31,10 +31,10 @@ export class CreateColleagueFormsComponent {
         {
           pseudo: this.model.pseudo,
           photo: this.model.urlphoto,
+          last: this.model.nom,
+          first: this.model.prenom,
           score: 0
-        },
-        this.model.nom,
-        this.model.prenom
+        }
       )
     }
     this.resetModel();

@@ -42,11 +42,11 @@ export class CreateColleagueReactiveFormsComponent {
       this.colleagueService.addCollegue(
         {
           pseudo: this.model.pseudo,
+          last: this.model.nom,
+          first: this.model.prenom,
           photo: this.model.urlphoto,
           score: 0
-        },
-        this.model.nom,
-        this.model.prenom
+        }
       )
     }
     this.resetModel();
