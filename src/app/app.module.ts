@@ -1,6 +1,6 @@
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app.routing';
 import { CreateCollegueReactiveModule } from './pages/create-collegue-reactive/create-collegue-reactive.module';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 import { CreateColleagueModule } from './pages/create-colleague/create-colleague.module';
 import { WelcomeModule } from './pages/welcome/welcome.module';
 import { NgModule } from '@angular/core';
@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     WelcomeModule,
     HttpClientModule,
     CreateColleagueModule,
-    CreateCollegueReactiveModule
+    CreateCollegueReactiveModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

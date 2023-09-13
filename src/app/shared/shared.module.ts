@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VoteService } from './../providers/vote.service';
 import { ColleagueService } from './../providers/colleague.service';
@@ -32,7 +33,8 @@ import { MenuComponent } from './components/menu/menu.component';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   exports: [
     LikeHateComponent,
