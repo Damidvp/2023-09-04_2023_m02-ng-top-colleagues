@@ -1,0 +1,15 @@
+<form (ngSubmit)="submitLogin()" #formLogin="ngForm" id="form-login">
+  <h1>Connexion</h1>
+  <div class="element-form">
+    <label>Pseudo</label>
+    <input [(ngModel)]="model.pseudo" [ngModelOptions]="{updateOn: 'blur'}" #pseudo="ngModel" name="pseudo" type="text" required>
+  </div>
+  <div class="element-form">
+    <label>Mot de passe</label>
+    <input [(ngModel)]="model.password" [ngModelOptions]="{updateOn: 'blur'}" #password="ngModel" name="password" type="password" required>
+  </div>
+  <div>
+    <button type="submit" [disabled]="formLogin.invalid">Se connecter</button>
+  </div>
+  <p *ngIf="formLogin">Pseudo ou mot de passe incorrect.</p>
+</form>

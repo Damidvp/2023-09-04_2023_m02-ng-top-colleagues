@@ -1,3 +1,4 @@
+import { LoginModule } from './pages/login/login.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { CreateCollegueReactiveModule } from './pages/create-collegue-reactive/create-collegue-reactive.module';
@@ -25,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     CreateColleagueModule,
     CreateCollegueReactiveModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,21 @@
+#form-login{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  width:30em;
+  background-color:rgba(119, 197, 236, 0.8);
+
+  padding: 2em 5em;
+  margin-top: 5em;
+  border-radius:6px;
+
+  .element-form{
+    display:flex;
+    justify-content:space-between;
+  }
+
+  p{
+    color: red;
+  }
+}
