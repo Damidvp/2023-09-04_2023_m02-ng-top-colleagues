@@ -1,18 +1,25 @@
-#colleague-details{
+#container-details{
   display:flex;
-  flex-direction:column;
-  align-items:center;
+  justify-content:center;
+  #colleague-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  background-color: rgba(128, 198, 255, 0.7);
-  padding:1em 8em;
-  margin:2em 0;
+    background-color: rgba(128, 198, 255, 0.7);
+    padding: 1em 8em;
+    margin: 2em 0;
+    width: 45em;
+    border-radius: 5px;
 
-  border-radius:5px;
-  img{
-    width:18em;
-  }
-  .aff-collegue-pseudo{
-    font-size:1.6em;
-    font-weight: bold;
+    img {
+      width: 18em;
+    }
+
+    .aff-collegue-pseudo {
+      font-size: 1.6em;
+      font-weight: bold;
+    }
   }
 }
+

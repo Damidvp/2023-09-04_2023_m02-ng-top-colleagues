@@ -1,10 +1,12 @@
 <tc-menu></tc-menu>
-<div id="colleague-details">
-  <div>
-    <img src="{{colleague?.photo}}" alt="une_photo">
+<div id="container-details">
+  <div id="colleague-details">
+    <div>
+      <img src="{{colleague?.photo}}" alt="une_photo">
+    </div>
+    <div class="aff-collegue-pseudo">{{colleague?.pseudo | uppercase}}</div>
+    <div>{{colleague?.score | score}}</div>
+    <div>Nom : {{colleague?.last}}</div>
+    <div>Prénom : {{colleague?.first}}</div>
   </div>
-  <div class="aff-collegue-pseudo">{{colleague?.pseudo | uppercase}}</div>
-  <div>{{colleague?.score | score}}</div>
-  <div>Nom : {{colleague?.last}}</div>
-  <div>Prénom : {{colleague?.first}}</div>
 </div>
