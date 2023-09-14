@@ -14,16 +14,13 @@ export class AuthService {
     const httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
     };
-    this.http.post<Object>('https://app-005f27d8-9033-48cc-ba69-b798464dee52.cleverapps.io/api/v2/login',
+    return this.http.post<Object>('https://app-005f27d8-9033-48cc-ba69-b798464dee52.cleverapps.io/api/v2/login',
       {
         pseudo: pseudo,
         password: mdp
       },
       httpOptions
     )
-    .subscribe((login) => {
-      this.route.navigate(["/welcome-page"]);
-    })
 
   }
 }
