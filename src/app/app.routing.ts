@@ -1,3 +1,4 @@
+import { AuthGuard } from './guard/auth.guard';
 import { LoginPage } from './pages/login/login.page';
 import { ColleagueDetailsComponent } from './shared/components/colleague-details/colleague-details.component';
 import { ColleagueComponent } from './shared/components/colleague/colleague.component';
@@ -9,11 +10,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { CreateColleagueReactiveFormsComponent } from './shared/components/create-colleague-reactive-forms/create-colleague-reactive-forms.component';
 
 export const ROUTES: Routes = [
-  { path:'welcome-page', component: WelcomePage },
-  { path:'create-form-template', component: CreateColleagueFormsComponent },
-  { path:'create-form-reactive', component: CreateColleagueReactiveFormsComponent },
+  { path:'welcome-page', component: WelcomePage, canActivate: [AuthGuard] },
+  { path:'create-form-template', component: CreateColleagueFormsComponent, canActivate: [AuthGuard] },
+  { path:'create-form-reactive', component: CreateColleagueReactiveFormsComponent, canActivate: [AuthGuard] },
+  { path:'colleagues/:pseudo', component: ColleagueDetailsComponent, canActivate: [AuthGuard]},
   { path:'login', component: LoginPage },
-  { path:'colleagues/:pseudo', component: ColleagueDetailsComponent},
+  { path:'', pathMatch: 'full', redirectTo: '/login'},
   { path: '**', component: LoginPage }
 ]
 

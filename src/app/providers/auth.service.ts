@@ -23,4 +23,12 @@ export class AuthService {
     )
 
   }
+
+  isLoggedIn(){
+    console.log(localStorage.getItem("jwt"));
+    if(localStorage.getItem("jwt")){
+      return true;
+    }
+    return false;
+  }
 }

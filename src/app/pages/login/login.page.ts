@@ -35,9 +35,9 @@ export class LoginPage {
       this.authService.login(this.model.pseudo, this.model.password).subscribe((login) => {
         console.log(login);
         this.jwt = login;
-        localStorage.setItem("jeton", this.jwt.jwt);
         if(this.jwt){
           console.log(this.jwt.jwt);
+          localStorage.setItem("jwt", this.jwt.jwt);
           this.route.navigate(["/welcome-page"]);
         }
       },
