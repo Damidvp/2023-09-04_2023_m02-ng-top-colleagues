@@ -40,3 +40,44 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Compiled output
+angular-tests-par-la-pratique/dist
+angular-tests-par-la-pratique/tmp
+angular-tests-par-la-pratique/out-tsc
+angular-tests-par-la-pratique/bazel-out
+
+# Node
+angular-tests-par-la-pratique/node_modules
+angular-tests-par-la-pratique/npm-debug.log
+angular-tests-par-la-pratique/yarn-error.log
+
+# IDEs and editors
+angular-tests-par-la-pratique/.idea/
+angular-tests-par-la-pratique/.project
+angular-tests-par-la-pratique/.classpath
+angular-tests-par-la-pratique/.c9/
+angular-tests-par-la-pratique/*.launch
+angular-tests-par-la-pratique/.settings/
+angular-tests-par-la-pratique/*.sublime-workspace
+
+# Visual Studio Code
+angular-tests-par-la-pratique/.vscode/*
+!angular-tests-par-la-pratique/.vscode/settings.json
+!angular-tests-par-la-pratique/.vscode/tasks.json
+!angular-tests-par-la-pratique/.vscode/launch.json
+!angular-tests-par-la-pratique/.vscode/extensions.json
+angular-tests-par-la-pratique/.history/*
+
+# Miscellaneous
+angular-tests-par-la-pratique/.angular/cache
+angular-tests-par-la-pratique/.sass-cache/
+angular-tests-par-la-pratique/connect.lock
+angular-tests-par-la-pratique/coverage
+angular-tests-par-la-pratique/libpeerconnection.log
+angular-tests-par-la-pratique/testem.log
+angular-tests-par-la-pratique/typings
+
+# System files
+angular-tests-par-la-pratique/.DS_Store
+angular-tests-par-la-pratique/Thumbs.db
