@@ -1,7 +1,17 @@
 <div id="menu">
-  <ul>
-    <li><a routerLink="/welcome-page" routerLinkActive="active-link">Accueil</a></li>
-    <li><a routerLink="/create-form-template" routerLinkActive="active-link">Formulaire template</a></li>
-    <li><a routerLink="/create-form-reactive" routerLinkActive="active-link">Formulaire reactive</a></li>
-  </ul>
+  <div>
+    <ul>
+      <li><a routerLink="/welcome-page" routerLinkActive="active-link">Accueil</a></li>
+      <li><a routerLink="/create-form-template" routerLinkActive="active-link">Formulaire template</a></li>
+      <li><a routerLink="/create-form-reactive" routerLinkActive="active-link">Formulaire reactive</a></li>
+    </ul>
+  </div>
+  <div id="menu-droite">
+    <div id="mess-bienvenue">
+      <p>Bienvenue, {{userLogged?.first}} {{userLogged?.last}} !</p>
+    </div>
+    <div id="btn-logout">
+      <button (click)="deconnexion()">Déconnexion</button>
+    </div>
+  </div>
 </div>
