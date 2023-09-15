@@ -4,5 +4,5 @@
   </div>
   <div class="aff-collegue-pseudo"><a [routerLink]="['/colleagues', collegue?.pseudo]">{{collegue?.pseudo | uppercase}}</a></div>
   <div>{{collegue?.score | score}}</div>
-  <tc-like-hate [overScore]="overScore()" [underScore]="underScore()" (newvalue)="changeScore($event)" (newvalue)="addVoteToCollegue($event)"></tc-like-hate>
+  <tc-like-hate [overScore]="overScore()" [underScore]="underScore()" (newvalue)="changeScore()" (newvalue)="addVoteToCollegue($event)"></tc-like-hate>
 </div>

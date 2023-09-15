@@ -49,4 +49,5 @@ export class VotingHistoryComponent implements OnInit {
   load(){
     this.listeVotes = this.voteService.getListOfVotes();
   }
+
 }

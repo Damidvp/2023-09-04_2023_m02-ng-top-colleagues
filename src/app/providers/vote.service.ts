@@ -17,7 +17,7 @@ export class VoteService {
     this.getVotes()
     .subscribe((allVotes: Vote[]) => {
         for(let vote of allVotes){
-          console.log(vote);
+          //console.log(vote);
           this.votes.push(vote);
           /*
           let lhString:string = vote.like_hate;

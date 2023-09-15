@@ -1,3 +1,4 @@
+import { ColleagueService } from './../../../providers/colleague.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { VoteService } from './../../../providers/vote.service';
 import { Vote } from './../../../models/vote';
@@ -16,18 +17,19 @@ export class ColleagueComponent {
 
   @Output() collegueVote:EventEmitter<Vote> = new EventEmitter<Vote>();
 
-  constructor(private voteService: VoteService){
+  constructor(private voteService: VoteService, private colleagueService: ColleagueService){
 
   }
 
-  changeScore(val:LikeHate){
+  changeScore(){
     if(this.collegue){
-      if(val === LikeHate.HATE){
-        this.collegue.score -= 200;
-      } else if (val === LikeHate.LIKE){
-        this.collegue.score += 100;
-      }
+      this.colleagueService.getCollegueByPseudo(this.collegue.pseudo).subscribe(coll => {
+        if(coll && this.collegue){
+          this.collegue.score = coll.score;
+        }
+      })
     }
+
   }
 
   overScore():boolean{
@@ -52,7 +54,8 @@ export class ColleagueComponent {
     if(this.collegue){
       const newVote = {
         colleague: this.collegue,
-        like_hate: vote
+        like_hate: vote,
+        scoreActuel: this.collegue.score
       }
       this.voteService.addVote(newVote);
     }

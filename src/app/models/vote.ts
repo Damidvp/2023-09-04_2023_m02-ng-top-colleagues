@@ -3,5 +3,5 @@ import { LikeHate } from './like-hate';
 
 export interface Vote {
   colleague:Colleague;
-  like_hate:LikeHate
+  like_hate:LikeHate;
 }
