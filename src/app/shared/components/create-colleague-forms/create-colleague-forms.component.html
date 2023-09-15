@@ -1,32 +1,32 @@
 <tc-menu></tc-menu>
 <div id="container-form">
   <form tcFirstLastValidator (ngSubmit)="submit()" #formColleagues="ngForm" id="form-ajout">
-    <h1>Ajouter un collègue (native) - 新同僚</h1>
+    <h1>Ajouter un collègue (native)</h1>
     <p *ngIf="formColleagues.errors && (nom.dirty || prenom.dirty) && (nom.value != '' && prenom.value != '')">
       {{formColleagues.errors['firstLast']}}</p>
     <div class="element-form">
-      <label>Pseudo - ニックネーム</label>
+      <label>Pseudo</label>
       <input tcPseudoValidator [(ngModel)]="model.pseudo" [ngModelOptions]="{updateOn: 'blur'}"
         [ngClass]="{'valide': !pseudo.errors && pseudo.dirty, 'invalide': pseudo.errors && pseudo.dirty, 'blank': pseudo.value == '' }"
         #pseudo="ngModel" name="pseudo" type="text" required>
     </div>
     <p *ngIf="pseudo.dirty && pseudo.errors && pseudo.value != ''">{{pseudo.errors['pseudoMessage']}}</p>
     <div class="element-form">
-      <label>Nom - 名字</label>
+      <label>Nom</label>
       <input [(ngModel)]="model.nom" [ngModelOptions]="{updateOn: 'blur'}"
         [ngClass]="{'valide': nom.valid && nom.dirty, 'invalide': nom.invalid && nom.dirty, 'blank': nom.value == ''}"
         #nom="ngModel" name="nom" type="text" minlength="2" required>
     </div>
     <p *ngIf="nom.dirty && nom.invalid && nom.value != ''">Nom invalide.</p>
     <div class="element-form">
-      <label>Prénom - 名前</label>
+      <label>Prénom</label>
       <input [(ngModel)]="model.prenom" [ngModelOptions]="{updateOn: 'blur'}"
         [ngClass]="{'valide': prenom.valid && prenom.dirty, 'invalide': prenom.invalid && prenom.dirty, 'blank': prenom.value == ''}"
         #prenom="ngModel" name="prenom" minlength="2" type="text" required>
     </div>
     <p *ngIf="prenom.dirty && prenom.invalid && prenom.value != ''">Prénom invalide.</p>
     <div class="element-form">
-      <label>Photo URL - イメージURL</label>
+      <label>Photo URL</label>
       <input [(ngModel)]="model.urlphoto" [ngModelOptions]="{updateOn: 'blur'}"
         [ngClass]="{'valide': urlIsValid(model.urlphoto) && url.dirty, 'invalide': !urlIsValid(model.urlphoto) && url.dirty, 'blank': url.value == ''}"
         #url="ngModel" name="urlphoto" type="text" required>

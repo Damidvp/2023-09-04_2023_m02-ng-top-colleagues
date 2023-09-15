@@ -1,29 +1,29 @@
 <tc-menu></tc-menu>
 <div id="container-form">
   <form (ngSubmit)="submit()" [formGroup]="formColleagues" id="form-ajout">
-    <h1>Ajouter un collègue (reactive) - 新同僚</h1>
+    <h1>Ajouter un collègue (reactive)</h1>
     <p
       *ngIf="formColleagues.hasError('firstLast') && (formColleagues.get('nom')?.value && formColleagues.get('prenom')?.value)">
       Le nom et prénom doivent être différents</p>
     <div class="element-form">
-      <label>Pseudo - ニックネーム</label>
+      <label>Pseudo</label>
       <input tcPseudoValidator formControlName="pseudo" [(ngModel)]="model.pseudo" name="pseudo" type="text">
     </div>
     <p *ngIf="formColleagues.get('pseudo')?.hasError('pseudoMessage')">Pseudo déjà utilisé</p>
     <div class="element-form">
-      <label>Nom - 名字</label>
+      <label>Nom</label>
       <input [(ngModel)]="model.nom" formControlName="nom" [ngClass]="" name="nom" type="text">
     </div>
     <p *ngIf="formColleagues.get('nom')?.hasError('minlength')">Nom invalide.</p>
     <div class="element-form">
-      <label>Prénom - 名前</label>
+      <label>Prénom</label>
       <input [(ngModel)]="model.prenom" formControlName="prenom" [ngClass]="" name="prenom" type="text">
     </div>
     <p
       *ngIf="formColleagues.get('prenom')?.hasError('minlength') && formColleagues.get('prenom')?.dirty && formColleagues.get('prenom')?.value != ''">
       Prénom invalide.</p>
     <div class="element-form">
-      <label>Photo URL - イメージURL</label>
+      <label>Photo URL</label>
       <input [(ngModel)]="model.urlphoto" formControlName="url" [ngClass]="" name="urlphoto" type="text">
     </div>
     <p
